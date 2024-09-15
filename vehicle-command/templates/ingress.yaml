@@ -9,7 +9,7 @@ spec:
   tls:
     passthrough: true
   routes:
-    - match: HostSNI(`vehicle-commands.myteslamate.com`)
+    - kind: HostSNI(`commands.myteslamate.com`)
       services:
         - name: {{ include "vehicle-command.fullname" . }}
           port: {{ .Values.service.port }}
