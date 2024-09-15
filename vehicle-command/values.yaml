@@ -105,6 +105,8 @@ envs:
    value: "/mnt/tls.key"
  - name: TESLA_KEY_FILE
    value: "/mnt/private.pem"
+ - name: TESLA_HTTP_PROXY_PORT
+   value: 443
 
 nodeSelector: {}
 
