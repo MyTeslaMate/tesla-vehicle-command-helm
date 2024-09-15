@@ -10,7 +10,7 @@ spec:
     secretName: app-tls
   routes:
     - kind: Rule
-      match: vehicle-command.myteslamate.com
+      match: Host(`vehicle-command.myteslamate.com`)
       services:
         - name: {{ include "vehicle-command.fullname" . }}
           port: {{ .Values.service.port }}
