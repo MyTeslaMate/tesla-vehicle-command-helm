@@ -95,6 +95,12 @@ envs: []
 # - name: foo
 #   value: "/etc/foo"
 
+# Extra secrets to be injected as environment variables
+# Each secret will be mounted as envFrom in the deployment
+extraSecrets: []
+# - secretName: my-secret
+# - secretName: another-secret
+
 nodeSelector: {}
 
 tolerations: []
