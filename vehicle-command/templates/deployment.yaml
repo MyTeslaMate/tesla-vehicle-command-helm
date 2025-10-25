@@ -59,11 +59,11 @@ spec:
           env:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- with .Values.extraSecrets }}
+          {{- if .Values.extraSecrets }}
           envFrom:
-            {{- range . }}
+            {{- range $secretName, $secretData := .Values.extraSecrets }}
             - secretRef:
-                name: {{ .secretName }}
+                name: {{ $secretName }}
             {{- end }}
           {{- end }}
       {{- with .Values.volumes }}

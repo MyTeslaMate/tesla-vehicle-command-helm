@@ -95,11 +95,22 @@ envs: []
 # - name: foo
 #   value: "/etc/foo"
 
-# Extra secrets to be injected as environment variables
-# Each secret will be mounted as envFrom in the deployment
-extraSecrets: []
-# - secretName: my-secret
-# - secretName: another-secret
+# Extra secrets to be created and injected as environment variables
+# Each secret will be created with the specified data and mounted as envFrom in the deployment
+extraSecrets: {}
+#  vehicle-command:
+#    tls.key: |
+#      -----BEGIN PRIVATE KEY-----
+#      contenu ici
+#      -----END PRIVATE KEY-----
+#    cert.pem: |
+#      -----BEGIN CERTIFICATE-----
+#      contenu ici
+#      -----END CERTIFICATE-----
+#    private.pem: |
+#      -----BEGIN PRIVATE KEY-----
+#      contenu ici
+#      -----END PRIVATE KEY-----
 
 nodeSelector: {}
 
